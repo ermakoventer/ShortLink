@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Ссылки
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="title__auth">Ссылки</h1>
+    <form method="POST" class="form-register auth">
+        {% csrf_token %}
+        {{ tut.as_table }}
+        <button class="btn__register" type="submit">Создать ссылку</button>
+        <p class="links__title">Доступнные ссылки</p>
+        {% for post in news %}
+        <p>Ссылка - <a href="{{ post.url }}" target="_blank" class="links__item">/links/{{ post.slug }}/</a></p>
+    
+        {% endfor %}
+    </form>
+
+
+
+{% endblock %}

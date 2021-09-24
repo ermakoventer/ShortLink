@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Кабинет пользователя
+{% endblock %}
+
+{% block content %}
+    <div class="profile__title">
+        <h1 class="profile__p">Кабинет пользователя</h1>
+        <p class="profile__p">@{{ user.username }}</p>
+        <p class="profile__p">{{ user.email }}</p>
+        <a href="{% url 'exit' %}" class="btn__register">Выйти из кабинета</a>
+    </div>
+    <form method="POST" class="form-register mt-4">
+        {% csrf_token %}
+        {{ updateUserForm.as_table }}
+        <button class="btn__register" type="submit">Обновить</button>
+    </form>
+
+{% endblock %}
+

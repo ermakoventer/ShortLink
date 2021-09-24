@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Страница авторизации
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="title__auth">Страница авторизации</h1>
+    <form method="POST" class="form-register auth">
+        {% csrf_token %}
+        {{ form.as_table }}
+        <button class="btn__register" type="submit">Войти</button>
+    </form>
+
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1 class="title__reg">{{ title }}</h1>
+    <form method="POST" class="form-register" autocomplete="off">
+        {% csrf_token %}
+        {{ form.as_table }}
+        <button class="btn__register" type="submit">Зарегистрироваться</button>
+        <p>Уже зарегистрированы? <a href="" class="btn__auth">Войти в личный кабинет</a></p>
+    </form>
+{% endblock %}
+

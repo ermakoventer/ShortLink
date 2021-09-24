@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Вы успешно вышли с аккаунты
+{% endblock %}
+
+{% block content %}
+<div class="profile__exit">
+    <h1 >Вы успешно вышли с аккаунты</h1>
+    <a href="{% url 'user' %}" class="btn__register">Войти в личный кабинет снова</a>
+</div>
+{% endblock %}
